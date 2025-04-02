@@ -148,7 +148,7 @@ print(outputs.shape)  # Expected shape: [5, 1, 192]
 
 | Dataset            | AASIST (EER%) | Light-DARTS (EER%) | ECAPA-TDNN (EER%) |
 |--------------------|---------------|--------------------|-------------------|
-| ASVspoof 2019 LA   | 0.83          | 1.12               | 1.45              |
+| ASVspoof 2019 LA   | 0.44          | 1.12               | 1.45              |
 | Deepfake-TIMIT     | 2.15          | 3.01               | 4.32              |
 | Cross-Dataset (A→B)| 5.21          | 7.89               | 9.45              |
 
