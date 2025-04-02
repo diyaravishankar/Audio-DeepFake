@@ -151,6 +151,42 @@ print(outputs.shape)  # Expected shape: [5, 1, 192]
 | Deepfake-TIMIT     | 2.15          | 3.01               | 4.32              |
 | Cross-Dataset (A→B)| 5.21          | 7.89               | 9.45              |
 
+
+## 🏆 Model Pick: AASIST
+
+  - EER: 0.44%
+
+  - Dataset: ASVspoof 2019 (LA)
+
+  - Feature Extraction: Wav2Vec2, HuBERT, WavLM
+
+  - Network: Conv-TasNet
+
+  - Loss Function: AAM Softmax
+
+## 📈Performance:
+
+  - Achieves 14.07% EER on ASVSpoof2019 LA music-0dB condition
+
+  - Lightweight variant (AASIST-L) with 85k parameters outperforms conventional systems
+
+  - Maintains 22.67% EER in closed-set synthetic audio detection
+
+## 💪Strengths:
+
+  - Unified architecture eliminates need for score-level ensembles
+
+  - Raw audio processing avoids information loss from feature engineering
+
+  - Heterogeneous graphs effectively capture cross-domain spoofing cues
+
+## ⚠️ Limitations:
+
+  - Higher computational complexity from graph networks
+
+  - Requires careful tuning of attention mechanisms
+
+
 ## 📚 References
 - AASIST: [Official GitHub](https://github.com/clovaai/aasist)
 - Light-DARTS: [Implementation Guide](https://github.com/light-darts/docs)
