@@ -18,9 +18,9 @@ Here we will be reviewing 3 end to end models for this usecase:
 
 ### AASIST (Audio Anti-Spoofing Using Integrated Spectro-Temporal Graph Attention Networks)
 **Key Innovation**:  
-✅ Integrated spectro-temporal graph attention networks for cross-domain feature interaction
-✅ Dual-branch architecture with learnable filter banks
-✅ Heterogeneous graph stacking for spoofing artifact detection
+- ✅ Integrated spectro-temporal graph attention networks for cross-domain feature interaction
+- ✅ Dual-branch architecture with learnable filter banks
+- ✅ Heterogeneous graph stacking for spoofing artifact detection
 
 **Performance**:  
 - **ASVspoof 2019 LA**: 0.83% EER 
@@ -40,13 +40,14 @@ Here we will be reviewing 3 end to end models for this usecase:
 
 ### Light-DARTS
 **Key Innovation**:  
-🚀 Differentiable architecture search (NAS) for anti-spoofing 
-🚀 Dynamic weight sharing with 50% reduced search space
-🚀 Automated feature processing optimization
+- 🚀 Differentiable architecture search (NAS) for anti-spoofing 
+- 🚀 Dynamic weight sharing with 50% reduced search space
+- 🚀 Automated feature processing optimization
 
 **Performance**:  
 - **ASVspoof 2019 LA**: 1.12% EER
 - **Training Efficiency**: 50hrs search + 20hrs training 
+
 **Why Promising**:  
 🔹 Automated architecture discovery adapts to new threats 
 🔹 Lightweight design (1.2M params) enables deployment 
@@ -59,9 +60,9 @@ Here we will be reviewing 3 end to end models for this usecase:
 
 ### ECAPA-TDNN + MFCC
 **Key Innovation**:  
-🎯 Channel-attentive TDNN with squeeze-excitation blocks
-🎯 Multi-layer feature aggregation
-🎯 Fixed MFCC preprocessing pipeline 
+- 🎯 Channel-attentive TDNN with squeeze-excitation blocks
+- 🎯 Multi-layer feature aggregation
+- 🎯 Fixed MFCC preprocessing pipeline 
 
 **Performance**:  
 - **ASVspoof 2019 LA**: 1.45% EER 
