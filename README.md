@@ -149,7 +149,7 @@ print(outputs.shape)  # Expected shape: [5, 1, 192]
 | Dataset            | AASIST (EER%) | Light-DARTS (EER%) | ECAPA-TDNN (EER%) |
 |--------------------|---------------|--------------------|-------------------|
 | ASVspoof 2019 LA	  |0.66	|0.87	|0.99         |
-| In-the-Wild     | 11.83	          | 38.95               | 13.07              |
+| In-the-Wild     | 11.83(obtained)	          | 38.95               | 13.07              |
 | Cross-Dataset (A→B)| 5.14          | 7.89               | 5.35              |
 
 
@@ -186,6 +186,35 @@ print(outputs.shape)  # Expected shape: [5, 1, 192]
   - Higher computational complexity from graph networks
 
   - Requires careful tuning of attention mechanisms
+
+## 🛠️Challenges & Solutions
+
+- Corrupt/Missing Files: Crashed the DataLoader.
+➤ Implemented file validation to skip invalid entries.
+
+- Variable Audio Lengths: Affected batching.
+➤ Introduced _pad_trim method to standardize length.
+
+- High Sample Rates (48kHz): Increased memory usage.
+➤ Downsampled all files to 16kHz.
+
+## 🤔Assumptions
+
+- All valid files are ≤4 seconds.
+
+- Labels are binary and class distribution is balanced enough for stratified splitting.
+
+### 🔍 Key Challenges & Fixes
+
+| **Challenge**              | **Solution**                                               |
+|---------------------------|------------------------------------------------------------|
+| Multiprocessing crashes   | Moved resampler init to `__getitem__`, reduced worker count |
+| Class imbalance           | Stratified split, added class weights to the loss function |
+| Overfitting               | Added Dropout, simplified model architecture               |
+| High EER                  | ROC analysis to determine optimal decision threshold       |
+
+
+
 
 
 ## 📚 References
